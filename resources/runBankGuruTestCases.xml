@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="BANK GURU" parallel="false">
+  <test name="Run on FIREFOX">
+    <classes>
+      <class name="com.bankguru.customer.Account_01_NewCustomer_PageObjectParttern"/>
+	  <class name="com.bankguru.customer.Account_01_EditCustomer_PageObjectParttern"/>
+      </classes>
+  </test> 
+</suite>

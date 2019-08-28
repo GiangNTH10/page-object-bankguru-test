@@ -24,7 +24,7 @@ public class Account_02_RegisterAndLogin_AbtractPage_1 {
 	  email = "automation10" + randomDataTest() + "@gmail.com";	  
 	//  abstractPage = new AbstractPage();
 	  
-	//  driver.get("http://demo.guru99.com/v4/index.php");
+	//  driver.get("http://demo.guru99.com/v4/index.php");123
 	  abstractPage.openUrl(driver, "http://demo.guru99.com/v4/index.php");
 	  
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

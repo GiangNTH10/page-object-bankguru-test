@@ -9,9 +9,8 @@ import pageUIs.HomePageUI;
 import pageUIs.NewCustomerPageUI;
 
 public class NewCustomerPageObject extends AbstractPage {
-	
-	WebDriver driver;
 
+	WebDriver driver;
 
 	public NewCustomerPageObject(WebDriver mappingDriver) {
 		driver = mappingDriver;
@@ -116,7 +115,7 @@ public class NewCustomerPageObject extends AbstractPage {
 
 	public void clearValueInPINField() {
 		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
-		clearValueInElement(driver, NewCustomerPageUI.PIN_TEXTBOX);		
+		clearValueInElement(driver, NewCustomerPageUI.PIN_TEXTBOX);
 	}
 
 	public void pressTABPINAndMoveNextField() {
@@ -148,7 +147,7 @@ public class NewCustomerPageObject extends AbstractPage {
 		waitForElementVisible(driver, NewCustomerPageUI.SUBMIT_BUTTON);
 		clickToElement(driver, NewCustomerPageUI.SUBMIT_BUTTON);
 	}
-	
+
 	public String getCustomerID() {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_ID_LABEL);
 		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_ID_LABEL);
@@ -156,7 +155,7 @@ public class NewCustomerPageObject extends AbstractPage {
 
 	public void clearValueInTelephoneField() {
 		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		clearValueInElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);		
+		clearValueInElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
 	}
 
 	public void pressTABTelephoneAndMoveNextField() {
@@ -177,7 +176,7 @@ public class NewCustomerPageObject extends AbstractPage {
 
 	public void clearValueInEmailField() {
 		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
-		clearValueInElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX);		
+		clearValueInElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
 	}
 
 	public void pressTABEmailAndMoveNextField() {
@@ -195,6 +194,6 @@ public class NewCustomerPageObject extends AbstractPage {
 		waitForElementVisible(driver, HomePageUI.EDIT_CUSTOMER_LINK);
 		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_LINK);
 		return PageGeneratorManager.getEditCustomerPage(driver);
-		}
+	}
 
 }

@@ -1,12 +1,8 @@
 package com.bankguru.account;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -18,7 +14,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Account_06_RegisterAndLogin_MultiBrowser_Parallel extends AbstractTest{
+public class Account_06_RegisterAndLogin_MultiBrowser_Parallel extends AbstractTest {
 
 	@Parameters("browser")
 	@BeforeClass
@@ -26,8 +22,8 @@ public class Account_06_RegisterAndLogin_MultiBrowser_Parallel extends AbstractT
 		driver = openMuiltiBrowser(browserName);
 		email = "automation10" + randomDataTest() + "@gmail.com";
 		loginPage = PageGeneratorManager.getLoginPage(driver);
-		System.out.println("Driver ID at Test Class:" +driver.toString());
-		
+		System.out.println("Driver ID at Test Class:" + driver.toString());
+
 	}
 
 	@Test
@@ -77,8 +73,6 @@ public class Account_06_RegisterAndLogin_MultiBrowser_Parallel extends AbstractT
 		homePage.isUserIDDisplayed(username);
 
 	}
-	
-	
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
@@ -89,7 +83,7 @@ public class Account_06_RegisterAndLogin_MultiBrowser_Parallel extends AbstractT
 		Random random = new Random();
 		return random.nextInt(99999);
 	}
-	
+
 	WebDriver driver;
 	String email, username, password, loginPageUrl;
 	RegisterPageObject registerPage;

@@ -16,7 +16,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain extends AbstractTest{
+public class Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain extends AbstractTest {
 
 	@Parameters("browser")
 	@BeforeClass
@@ -24,8 +24,8 @@ public class Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain extends 
 		driver = openMuiltiBrowser(browserName);
 		email = "automation10" + randomDataTest() + "@gmail.com";
 		loginPage = PageGeneratorManager.getLoginPage(driver);
-		System.out.println("Driver ID at Test Class:" +driver.toString());
-		
+		System.out.println("Driver ID at Test Class:" + driver.toString());
+
 	}
 
 	@Test
@@ -66,25 +66,25 @@ public class Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain extends 
 		homePage.isUserIDDisplayed(username);
 
 	}
-	
+
 	@Test
 	public void TC_03_OpenMultiplePage() {
 		System.out.println("ACTION: 1. Home Page navigate to New Customer Page");
 		newCustomerPage = homePage.openNewCustomerPage(driver);
-		
+
 		System.out.println("ACTION: 2. Home Page navigate to Edit Customer Page");
 		editCustomerPage = newCustomerPage.openEditCustomerPage(driver);
-		
+
 		loginPage = editCustomerPage.openLogoutLink(driver);
-		
+
 		loginPage.inputToUserIDTextbox(username);
 		loginPage.inputToPasswordTextbox(password);
 		homePage = loginPage.clickToLoginButton();
-		
+
 		System.out.println("ACTION: 3. Edit Customer Page navigate to New Customer Page");
 		newCustomerPage = homePage.openNewCustomerPage(driver);
 	}
-	
+
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		driver.quit();
@@ -94,7 +94,7 @@ public class Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain extends 
 		Random random = new Random();
 		return random.nextInt(99999);
 	}
-	
+
 	WebDriver driver;
 	String email, username, password, loginPageUrl;
 	RegisterPageObject registerPage;

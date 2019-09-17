@@ -7,24 +7,23 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import commons.AbstractPage;
-import pageUIs.LoginPageUI;
 
-public class LoginPageFactory extends AbstractPage{
-	
+public class LoginPageFactory extends AbstractPage {
+
 	private WebDriver driver;
-	
-	@FindBy(how = How.XPATH,using = "//input[@name='uid']")
+
+	@FindBy(how = How.XPATH, using = "//input[@name='uid']")
 	private WebElement userIDTextbox;
-	
-	@FindBy(how = How.XPATH,using = "//input[@name='password']")
+
+	@FindBy(how = How.XPATH, using = "//input[@name='password']")
 	private WebElement passwordTextbox;
-	
-	@FindBy(how = How.XPATH,using = "//input[@name='btnLogin']")
+
+	@FindBy(how = How.XPATH, using = "//input[@name='btnLogin']")
 	private WebElement loginButton;
-	
-	@FindBy(how = How.XPATH,using = "//a[text()='here']")
+
+	@FindBy(how = How.XPATH, using = "//a[text()='here']")
 	private WebElement hereLink;
-	
+
 	public LoginPageFactory(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -42,16 +41,16 @@ public class LoginPageFactory extends AbstractPage{
 	public void inputToUserIDTextbox(String username) {
 		waitForElementVisible(driver, userIDTextbox);
 		userIDTextbox.sendKeys(username);
-		
+
 	}
-	
+
 	public void inputToPasswordTextbox(String password) {
-		waitForElementVisible(driver, passwordTextbox);	
+		waitForElementVisible(driver, passwordTextbox);
 		passwordTextbox.sendKeys(password);
 	}
 
 	public void clickToLoginButton() {
-		waitForElementVisible(driver, loginButton);	
+		waitForElementVisible(driver, loginButton);
 		loginButton.click();
 	}
 }

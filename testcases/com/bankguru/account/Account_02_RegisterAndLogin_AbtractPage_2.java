@@ -23,9 +23,6 @@ public class Account_02_RegisterAndLogin_AbtractPage_2 extends AbstractPage{
   public void beforeClass() {
 	  driver = new FirefoxDriver();
 	  email = "automation10" + randomDataTest() + "@gmail.com";	  
-
-	  
-	//  driver.get("http://demo.guru99.com/v4/index.php");
 	  openUrl(driver, "http://demo.guru99.com/v4/index.php");
 	  
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

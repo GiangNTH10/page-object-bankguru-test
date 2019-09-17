@@ -6,9 +6,8 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPage;
 import commons.PageGeneratorManager;
 import pageUIs.EditCustomerPageUI;
-import pageUIs.HomePageUI;
 
-public class EditCustomerPageObject extends AbstractPage{
+public class EditCustomerPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public EditCustomerPageObject(WebDriver mappingDriver) {
@@ -22,7 +21,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABNameAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);
 	}
 
 	public boolean isCustomerIDErrorMessageDisplayed(String expectedText) {
@@ -37,7 +36,7 @@ public class EditCustomerPageObject extends AbstractPage{
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, EditCustomerPageUI.SUBMIT_BUTTON);	
+		waitForElementVisible(driver, EditCustomerPageUI.SUBMIT_BUTTON);
 		clickToElement(driver, EditCustomerPageUI.SUBMIT_BUTTON);
 	}
 
@@ -51,7 +50,7 @@ public class EditCustomerPageObject extends AbstractPage{
 		waitForElementVisible(driver, EditCustomerPageUI.ADDRESS_TEXTBOX);
 		clearValueInElement(driver, EditCustomerPageUI.ADDRESS_TEXTBOX);
 	}
-	
+
 	public boolean isAddressErrorMessageDisplayed(String expectedText) {
 		waitForElementVisible(driver, EditCustomerPageUI.ADDRESS_ERROR_MESSAGE);
 		String actualText = getTextElement(driver, EditCustomerPageUI.ADDRESS_ERROR_MESSAGE);
@@ -60,7 +59,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABAddressAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.ADDRESS_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.ADDRESS_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.ADDRESS_TEXTBOX, Keys.TAB);
 	}
 
 	public void clearValueInCityField() {
@@ -70,7 +69,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABCityAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.CITY_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.CITY_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.CITY_TEXTBOX, Keys.TAB);
 	}
 
 	public boolean isCityErrorMessageDisplayed(String expectedText) {
@@ -91,7 +90,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABStateAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.STATE_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.STATE_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.STATE_TEXTBOX, Keys.TAB);
 	}
 
 	public boolean isStateErrorMessageDisplayed(String expectedText) {
@@ -123,7 +122,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABPINAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.PIN_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.PIN_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.PIN_TEXTBOX, Keys.TAB);
 	}
 
 	public void clearValueInTelephoneField() {
@@ -133,7 +132,7 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void pressTABTelephoneAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.MOBILE_NUMBER_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.MOBILE_NUMBER_TEXTBOX, Keys.TAB);
 	}
 
 	public boolean isTelephoneErrorMessageDisplayed(String expectedText) {
@@ -149,12 +148,12 @@ public class EditCustomerPageObject extends AbstractPage{
 
 	public void clearValueInEmailField() {
 		waitForElementVisible(driver, EditCustomerPageUI.EMAIL_TEXTBOX);
-		clearValueInElement(driver, EditCustomerPageUI.EMAIL_TEXTBOX);	
+		clearValueInElement(driver, EditCustomerPageUI.EMAIL_TEXTBOX);
 	}
 
 	public void pressTABEmailAndMoveNextField() {
 		waitForElementVisible(driver, EditCustomerPageUI.EMAIL_TEXTBOX);
-		sendKeyboardToElement(driver, EditCustomerPageUI.EMAIL_TEXTBOX, Keys.TAB);	
+		sendKeyboardToElement(driver, EditCustomerPageUI.EMAIL_TEXTBOX, Keys.TAB);
 	}
 
 	public boolean isEmailErrorMessageDisplayed(String expectedText) {
@@ -173,6 +172,5 @@ public class EditCustomerPageObject extends AbstractPage{
 		clickToElement(driver, EditCustomerPageUI.MANAGER_LINK);
 		return PageGeneratorManager.getHomePage(driver);
 	}
-	
-	
+
 }

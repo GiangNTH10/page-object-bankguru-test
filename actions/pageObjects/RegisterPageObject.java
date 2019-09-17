@@ -6,10 +6,10 @@ import commons.AbstractPage;
 import commons.PageGeneratorManager;
 import pageUIs.RegisterPageUI;
 
-public class RegisterPageObject  extends AbstractPage{
-	
+public class RegisterPageObject extends AbstractPage {
+
 	WebDriver driver;
-	
+
 	public RegisterPageObject(WebDriver mappingDriver) {
 		driver = mappingDriver;
 	}
@@ -21,7 +21,7 @@ public class RegisterPageObject  extends AbstractPage{
 
 	public void clickToSubmitButton() {
 		waitForElementVisible(driver, RegisterPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, RegisterPageUI.SUBMIT_BUTTON);		
+		clickToElement(driver, RegisterPageUI.SUBMIT_BUTTON);
 	}
 
 	public String getUserNameInformation() {

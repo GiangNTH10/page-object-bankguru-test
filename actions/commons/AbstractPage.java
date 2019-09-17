@@ -10,11 +10,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import pageObjects.EditCustomerPageObject;
+import pageObjects.HomePageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.NewCustomerPageObject;
+import pageUIs.AbstractPageUI;
 
 
 public class AbstractPage {
@@ -306,6 +311,42 @@ public class AbstractPage {
 		waitExplicit = new WebDriverWait(driver, longTimeout);
 		byLocator = By.xpath(locator);
 		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
+	}
+	
+	// Common function open page object
+	public NewCustomerPageObject openNewCustomerPage(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.NEW_CUSTOMER_LINK);
+		clickToElement(driver,AbstractPageUI.NEW_CUSTOMER_LINK);
+		return PageGeneratorManager.getNewCustomerPage(driver);
+	}
+	
+	public EditCustomerPageObject openEditCustomerPage(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.EDIT_CUSTOMER_LINK);
+		clickToElement(driver,AbstractPageUI.EDIT_CUSTOMER_LINK);
+		return PageGeneratorManager.getEditCustomerPage(driver);
+	}
+	
+	public HomePageObject openHomePage(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.MANAGER_LINK);
+		clickToElement(driver,AbstractPageUI.MANAGER_LINK);
+		return PageGeneratorManager.getHomePage(driver);
+	}
+	
+	public LoginPageObject openLogoutLink(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.LOG_OUT_LINK);
+		clickToElement(driver,AbstractPageUI.LOG_OUT_LINK);
+		acceptAlert(driver);
+		sleepInSecond(driver, 3);
+		return PageGeneratorManager.getLoginPage(driver);
+	}
+	
+	public void sleepInSecond(WebDriver driver, long timeInSecond) {
+		try {
+			Thread.sleep(timeInSecond * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private WebElement element;

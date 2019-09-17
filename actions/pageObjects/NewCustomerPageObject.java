@@ -4,6 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageGeneratorManager;
+import pageUIs.HomePageUI;
 import pageUIs.NewCustomerPageUI;
 
 public class NewCustomerPageObject extends AbstractPage {
@@ -188,5 +190,11 @@ public class NewCustomerPageObject extends AbstractPage {
 		String actualText = getTextElement(driver, NewCustomerPageUI.EMAIL_ERROR_MESSAGE);
 		return actualText.equals(expectedText);
 	}
+
+	public EditCustomerPageObject navigateToEditCustomerPage() {
+		waitForElementVisible(driver, HomePageUI.EDIT_CUSTOMER_LINK);
+		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_LINK);
+		return PageGeneratorManager.getEditCustomerPage(driver);
+		}
 
 }

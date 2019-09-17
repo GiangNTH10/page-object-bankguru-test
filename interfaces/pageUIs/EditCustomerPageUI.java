@@ -17,4 +17,5 @@ public class EditCustomerPageUI {
 	public static final String MOBILE_NUMBER_ERROR_MESSAGE = "//*[@id='message7']";
 	public static final String EMAIL_TEXTBOX = "//input[@name='emailid']";
 	public static final String EMAIL_ERROR_MESSAGE = "//*[@id='message9']";
+	public static final String MANAGER_LINK = "//a[text()='Manager']";
 }

@@ -4,7 +4,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageGeneratorManager;
 import pageUIs.EditCustomerPageUI;
+import pageUIs.HomePageUI;
 
 public class EditCustomerPageObject extends AbstractPage{
 	WebDriver driver;
@@ -164,6 +166,12 @@ public class EditCustomerPageObject extends AbstractPage{
 	public void enterValueInEmailField(String emailInvalidFormatEdit1) {
 		waitForElementVisible(driver, EditCustomerPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, EditCustomerPageUI.EMAIL_TEXTBOX, emailInvalidFormatEdit1);
+	}
+
+	public HomePageObject navigateToHomePage() {
+		waitForElementVisible(driver, EditCustomerPageUI.MANAGER_LINK);
+		clickToElement(driver, EditCustomerPageUI.MANAGER_LINK);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 	
 	

@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="BANK GURU" parallel="false">
-  <test name="Run on FIREFOX">
+<suite name="BANK GURU" parallel="fail" thread-count="3">
+   <test name="Run on FIREFOX">
+  	<parameter name="browser" value="firefox"></parameter>
     <classes>
-      <class name="com.bankguru.customer.Account_01_NewCustomer_PageObjectParttern"/>
-	  <class name="com.bankguru.customer.Account_01_EditCustomer_PageObjectParttern"/>
+      <class name="com.bankguru.account.Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain"/>
       </classes>
   </test> 
+ <!--  
+   <test name="Run on CHROME">
+  	<parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.bankguru.account.Account_06_RegisterAndLogin_MultiBrowser_Parallel"/>
+      </classes>
+  </test> 
+   
+   <test name="Run on CHROME HEADLESS">
+  	<parameter name="browser" value="chromeheadless"></parameter>
+    <classes>
+      <class name="com.bankguru.account.Account_06_RegisterAndLogin_MultiBrowser_Parallel"/>
+      </classes>
+  </test> 
+  
+     <test name="Run on IE">
+  	<parameter name="browser" value="internetexplore"></parameter>
+    <classes>
+      <class name="com.bankguru.account.Account_06_RegisterAndLogin_MultiBrowser_Parallel"/>
+      </classes>
+  </test> 
+-->
 </suite>

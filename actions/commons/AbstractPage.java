@@ -78,12 +78,24 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
+	
+	public void clickToElement(WebDriver driver, String locator, String...values) {
+		locator = String.format(locator, (Object[]) values);
+		element = driver.findElement(By.xpath(locator));
+		element.click();
+	}
 
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(value);
 	}
 
+	public void sendkeyToElement(String data, WebDriver driver, String locator, String...values) {
+		locator = String.format(locator, (Object[]) values);
+		element = driver.findElement(By.xpath(locator));
+		element.sendKeys(data);
+	}
+	
 	public void selectItemInDropDown(WebDriver driver, String locator, String itemText) {
 		element = driver.findElement(By.xpath(locator));
 		select = new Select(element);
@@ -98,24 +110,21 @@ public class AbstractPage {
 
 	public void selectItemInCustomDropdown(WebDriver driver, String parentXpath, String allItemXpath,
 			String expectedValueItem) throws InterruptedException {
-		// Click vao dropdown cho xo het tat ca cac gia tri ra
+		
 		element = driver.findElement(By.xpath(parentXpath));
 		javascriptExecutor = (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("arguments[0].click();", element);
 		Thread.sleep(1000);
 
-		// Cho cho tat ca cac gia tri trong dropdown duoc load thanh cong
 		waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(allItemXpath)));
 
 		elements = driver.findElements(By.xpath(allItemXpath));
 
-		// Duyet qua het tat ca cac phan tu cho den khi thoa man dieu kien
 		for (WebElement childElement : elements) {
 			System.out.println("Text moi lan get = " + childElement.getText());
 
 			if (childElement.getText().contains(expectedValueItem)) {
-				// Click vao item can chon
 				if (childElement.isDisplayed()) {
 					System.out.println("Click by Selenium = " + childElement.getText());
 					childElement.click();
@@ -164,6 +173,12 @@ public class AbstractPage {
 	}
 
 	public boolean isControlDisplayed(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		return element.isDisplayed();
+	}
+	
+	public boolean isControlDisplayed(WebDriver driver, String locator, String...values) {
+		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
@@ -276,6 +291,8 @@ public class AbstractPage {
 		javascriptExecutor.executeScript("Windown.scrollBy(0,document.body.scrollHeight");
 	}
 
+	
+	
 	public void removeAttributeInDOM(WebDriver driver, String locator, String attributeRemove) {
 		element = driver.findElement(By.xpath(locator));
 		javascriptExecutor = (JavascriptExecutor) driver;
@@ -289,6 +306,13 @@ public class AbstractPage {
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locator) {
+		waitExplicit = new WebDriverWait(driver, longTimeout);
+		byLocator = By.xpath(locator);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+	}
+	
+	public void waitForElementVisible(WebDriver driver, String locator, String...strings) {
+		locator = String.format(locator, (Object[])strings);
 		waitExplicit = new WebDriverWait(driver, longTimeout);
 		byLocator = By.xpath(locator);
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
@@ -336,6 +360,11 @@ public class AbstractPage {
 		acceptAlert(driver);
 		sleepInSecond(driver, 3);
 		return PageGeneratorManager.getLoginPage(driver);
+	}
+	
+	public void openMultiplePage(WebDriver driver, String pageName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pageName);
 	}
 
 	public void sleepInSecond(WebDriver driver, long timeInSecond) {

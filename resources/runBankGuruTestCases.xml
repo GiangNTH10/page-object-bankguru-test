@@ -3,7 +3,7 @@
    <test name="Run on FIREFOX">
   	<parameter name="browser" value="firefox"></parameter>
     <classes>
-      <class name="com.bankguru.account.Account_07_RegisterAndLogin_WebDriverLifeCycle_ActionChain"/>
+	    <class name="com.bankguru.customer.Account_01_NewCustomer_PageObjectParttern"/>
       </classes>
   </test> 
  <!--  

@@ -120,7 +120,7 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at Customer ID field");
 		Assert.assertTrue(editCustomerPageObject.isCustomerIDErrorMessageDisplayed("Customer ID is required"));
 	}
-
+	
 	@Test
 	public void TC_02_CustomerIDCanNotBeNumeric() {
 
@@ -152,6 +152,7 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 		System.out.println("TC_04_ValidCustomerID");
 
 		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
+		editCustomerPageObject = editCustomerPageObject.openEditCustomerPage(driver);
 		editCustomerPageObject.enterValueInCustomerIDField(customerID);
 
 		System.out.println("EDIT CUSTOMER - STEP: 2. Click Submit button");
@@ -165,17 +166,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_05_AddressCanNotEmpty() {
 		System.out.println("TC_05_AddressCanNotEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Do not enter a value in Address field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Do not enter a value in Address field");
 		editCustomerPageObject.clearValueInAddressField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABAddressAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at Address field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at Address field");
 		Assert.assertTrue(editCustomerPageObject.isAddressErrorMessageDisplayed("ADDRESS cannot be empty"));
 	}
 
@@ -183,17 +180,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_06_CityCanNotEmpty() {
 		System.out.println("TC_06_CityCanNotEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Do not enter a value in City field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Do not enter a value in City field");
 		editCustomerPageObject.clearValueInCityField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABCityAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at City field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at City field");
 		Assert.assertTrue(editCustomerPageObject.isCityErrorMessageDisplayed("CITY cannot be empty"));
 	}
 
@@ -201,17 +194,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_07_CityCanNotBeNumeric() {
 		System.out.println("TC_07_CityCanNotBeNumeric");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in City field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in City field");
 		editCustomerPageObject.clearValueInCityField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in City field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in City field");
 		editCustomerPageObject.enterValueInCityField(cityNumericEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at City field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at City field");
 		Assert.assertTrue(editCustomerPageObject.isCityErrorMessageDisplayed("City cannot contain Number"));
 	}
 
@@ -219,17 +208,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_08_CityCanNotHaveSpecialCharacter() {
 		System.out.println("TC_08_CityCanNotHaveSpecialCharacter");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in City field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in City field");
 		editCustomerPageObject.clearValueInCityField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in City field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in City field");
 		editCustomerPageObject.enterValueInCityField(citySpecialCharacterEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at City field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at City field");
 		Assert.assertTrue(editCustomerPageObject.isCityErrorMessageDisplayed("City cannot contain Special Characters"));
 	}
 
@@ -238,17 +223,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_09_StateCanNotEmpty() {
 		System.out.println("TC_09_StateCanNotEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Do not enter a value in State field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Do not enter a value in State field");
 		editCustomerPageObject.clearValueInStateField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABStateAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at State field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at State field");
 		Assert.assertTrue(editCustomerPageObject.isStateErrorMessageDisplayed("STATE cannot be empty"));
 	}
 
@@ -256,17 +237,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_10_StateCanNotBeNumeric() {
 		System.out.println("TC_10_StateCanNotBeNumeric");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in State field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in State field");
 		editCustomerPageObject.clearValueInStateField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in State field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in State field");
 		editCustomerPageObject.enterValueInStateField(stateNumericEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at State field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at State field");
 		Assert.assertTrue(editCustomerPageObject.isStateErrorMessageDisplayed("Numbers are not allowed"));
 	}
 
@@ -274,17 +251,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_11_StateCanNotHaveSpecialCharacter() {
 		System.out.println("TC_11_StateCanNotHaveSpecialCharacter");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in State field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in State field");
 		editCustomerPageObject.clearValueInStateField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in State field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in State field");
 		editCustomerPageObject.enterValueInStateField(stateSpecialCharacterEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at State field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at State field");
 		Assert.assertTrue(
 				editCustomerPageObject.isStateErrorMessageDisplayed("City cannot contain Special Characters"));
 	}
@@ -293,17 +266,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_12_PINMustBeNumeric() {
 		System.out.println("TC_12_PINMustBeNumeric");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in PIN field");
 		editCustomerPageObject.clearValueInPINField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in PIN field");
 		editCustomerPageObject.enterValueInPINField(pINCharacterEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at PIN field");
 		Assert.assertTrue(editCustomerPageObject.isPINErrorMessageDisplayed("PIN cannot contain character"));
 	}
 
@@ -312,17 +281,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 
 		System.out.println("TC_13_PINCanNotBeEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in PIN field");
 		editCustomerPageObject.clearValueInPINField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABPINAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at PIN field");
 		Assert.assertTrue(editCustomerPageObject.isPINErrorMessageDisplayed("PIN cannot be empty"));
 	}
 
@@ -330,17 +295,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_14_PINMustHave6Digits() {
 		System.out.println("TC_14_PINMustHave6Digits");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in PIN field");
 		editCustomerPageObject.clearValueInPINField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in PIN field");
 		editCustomerPageObject.enterValueInPINField(pINLessThan6DigitsEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at PIN field");
 		Assert.assertTrue(editCustomerPageObject.isPINErrorMessageDisplayed("PIN must contain 6 digit"));
 	}
 
@@ -348,17 +309,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_15_PINCanNotHaveSpecialCharacter() {
 		System.out.println("TC_15_PINCanNotHaveSpecialCharacter");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in PIN field");
 		editCustomerPageObject.clearValueInPINField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in PIN field");
 		editCustomerPageObject.enterValueInPINField(pINHaveSpecialCharacterEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at PIN field");
 		Assert.assertTrue(editCustomerPageObject.isPINErrorMessageDisplayed("PIN cannot contain Special Characters"));
 	}
 
@@ -367,17 +324,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 
 		System.out.println("TC_16_TelephoneCanNotBeEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in Telephone field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in Telephone field");
 		editCustomerPageObject.clearValueInTelephoneField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABTelephoneAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at Telephone field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at Telephone field");
 		Assert.assertTrue(editCustomerPageObject.isTelephoneErrorMessageDisplayed("Telephone cannot be empty"));
 	}
 
@@ -385,17 +338,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_17_TelephoneCanNotHaveSpecialCharacter() {
 		System.out.println("TC_17_TelephoneCanNotHaveSpecialCharacter");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in Telephone field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in Telephone field");
 		editCustomerPageObject.clearValueInTelephoneField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in Telephone field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in Telephone field");
 		editCustomerPageObject.enterValueInTelephoneField(telephoneHaveSpecialCharacterEdit);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at PIN field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at PIN field");
 		Assert.assertTrue(
 				editCustomerPageObject.isTelephoneErrorMessageDisplayed("Telephone cannot contain Special Characters"));
 	}
@@ -405,17 +354,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 
 		System.out.println("TC_18_EmailCanNotBeEmpty");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in Email field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in Email field");
 		editCustomerPageObject.clearValueInEmailField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Press TAB and move next field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Press TAB and move next field");
 		editCustomerPageObject.pressTABEmailAndMoveNextField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at Email field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at Email field");
 		Assert.assertTrue(editCustomerPageObject.isEmailErrorMessageDisplayed("Email cannot be empty"));
 	}
 
@@ -424,17 +369,13 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 
 		System.out.println("TC_19_EmailMustBeInFormat");
 
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
-		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in Email field");
+		System.out.println("EDIT CUSTOMER - STEP: 1. Clear a value in Email field");
 		editCustomerPageObject.clearValueInEmailField();
 
-		System.out.println("EDIT CUSTOMER - STEP: 3. Enter numeric value in Email field");
+		System.out.println("EDIT CUSTOMER - STEP: 2. Enter numeric value in Email field");
 		editCustomerPageObject.enterValueInEmailField(emailInvalidFormatEdit1);
 
-		System.out.println("EDIT CUSTOMER - STEP: 4. Verify error message at Email field");
+		System.out.println("EDIT CUSTOMER - STEP: 3. Verify error message at Email field");
 		Assert.assertTrue(
 				editCustomerPageObject.isEmailErrorMessageDisplayed("Email must be in format example@example.com"));
 	}
@@ -443,11 +384,7 @@ public class Account_01_EditCustomer_PageObjectParttern extends AbstractTest {
 	public void TC_20_EmailMustBeInFormat() {
 
 		System.out.println("TC_20_EmailMustBeInFormat");
-
-		System.out.println("EDIT CUSTOMER - STEP: 1. Enter valid in Customer ID field");
-		editCustomerPageObject.enterValueInCustomerIDField(customerID);
-		editCustomerPageObject.clickToSubmitButton();
-
+		
 		System.out.println("EDIT CUSTOMER - STEP: 2. Clear a value in Email field");
 		editCustomerPageObject.clearValueInEmailField();
 
